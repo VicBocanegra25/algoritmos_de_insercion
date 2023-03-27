@@ -1,0 +1,3 @@
+/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Quick_sort/cmake-build-debug/CMakeFiles/Quick_sort.dir
+/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Quick_sort/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Quick_sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
