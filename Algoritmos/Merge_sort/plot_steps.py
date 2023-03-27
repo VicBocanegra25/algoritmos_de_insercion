@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 steps = np.loadtxt("./merge_steps.txt")
 
 plt.plot(range(0,101),steps, label="Número de pasos")
-plt.title("La gráfica del rendimiento de Merge Sort.")
+plt.title("La gráfica del rendimiento de Merge Sort.", fontsize = 20)
 plt.legend()
-plt.ylabel("Pasos")
-plt.xlabel("Elementos en la lista")
+plt.ylabel("Pasos", fontsize = 16)
+plt.xlabel("Elementos en la lista", fontsize = 16)
 plt.show()
