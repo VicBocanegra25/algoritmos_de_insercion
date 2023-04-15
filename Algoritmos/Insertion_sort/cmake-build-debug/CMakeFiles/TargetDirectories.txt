@@ -1,3 +1,3 @@
-/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Insertion_sort/cmake-build-debug/CMakeFiles/Insertion_sort.dir
-/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Insertion_sort/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Insertion_sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Insertion_sort/cmake-build-debug/CMakeFiles/Insertion_sort.dir
+/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Insertion_sort/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Insertion_sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir

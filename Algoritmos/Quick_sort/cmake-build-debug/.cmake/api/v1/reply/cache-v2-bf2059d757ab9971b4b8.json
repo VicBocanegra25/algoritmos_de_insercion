@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Selection_sort/cmake-build-debug"
+			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Selection_sort/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Selection_sort"
+			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -843,7 +843,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Selection_sort"
+			"value" : "Quick_sort"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1126,7 +1126,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Selection_sort_BINARY_DIR",
+			"name" : "Quick_sort_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1135,10 +1135,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Selection_sort/cmake-build-debug"
+			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort/cmake-build-debug"
 		},
 		{
-			"name" : "Selection_sort_IS_TOP_LEVEL",
+			"name" : "Quick_sort_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1150,7 +1150,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "Selection_sort_SOURCE_DIR",
+			"name" : "Quick_sort_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1159,7 +1159,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Selection_sort"
+			"value" : "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos Select CMakeLists.txt

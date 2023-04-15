@@ -1,137 +1,183 @@
+/* Implementación del algoritmo merge sort.
+ * El siguiente código utiliza merge sort para ordenar listas de diferentes tamaños (800, 8000, 80000).
+ * Las funciones implementan una variable llamada steps que en cada operación principal incrementa en 1 unidad, lo
+ * que nos servirá para evaluar el rendimiento del algoritmo cuando incrementa el tamaño de n.
+ * Finalmente, el programa imprime los resultados en dos archivos llamados merge_list.txt, merge_time.txt y merge_steps.txt;
+ * el primer archivo contiene las listas ordenadas, el segundo contiene el tiempo que le tomó al algoritmo ordenar la lista, mientras que el
+ * último contiene los pasos que le tomó ordenarlas. Este último archivo nos servirá para generar una gráfica (en otro programa)
+ * y ver el crecimiento de la función.
+ * @date: 26/03/2023
+ * @author: Víctor Bocanegra
+ * */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-/*
-    Merge Function: Merges two subarrays of arr[].
-    First subarray is arr[l..m]
-    Second subarray is arr[m+1..r]
-    steps: pointer to a variable that holds the number of steps taken
-*/
-void merge(int arr[], int l, int m, int r, int* steps)
+/* Función merge: Combina dos subarrays ordenados en un array ordenado.
+ * params:
+    long array[]: El array que se va a dividir y combinar
+    long left[]: El subarray izquierdo
+    long right[]: El subarray derecho
+    long left_size: El tamaño del subarray izquierdo
+    long right_size: El tamaño del subarray derecho
+ * returns:
+    unsigned long long: El número de pasos que le toma combinar los subarrays
+ */
+unsigned long long merge(long array[], long left[], long right[], long left_size, long right_size)
 {
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 =  r - m;
-    int L[n1], R[n2];
+    unsigned long long steps = 0;
+    long i = 0, j = 0, k = 0;
 
-    // Copy data to temporary arrays L[] and R[]
-    for (i = 0; i < n1; i++)
-        L[i] = arr[l + i];
-    for (j = 0; j < n2; j++)
-        R[j] = arr[m + 1+ j];
-
-    // Merge the temporary arrays back into arr[l..r]
-    i = 0;
-    j = 0;
-    k = l;
-    while (i < n1 && j < n2)
+    while (i < left_size && j < right_size)
     {
-        if (L[i] <= R[j])
+        steps++;
+        if (left[i] <= right[j])
         {
-            arr[k] = L[i];
-            i++;
+            array[k++] = left[i++];
         }
         else
         {
-            arr[k] = R[j];
-            j++;
+            array[k++] = right[j++];
         }
-        k++;
-
-        // Increment steps counter
-        (*steps)++;
     }
 
-    // Copy the remaining elements of L[], if there are any
-    while (i < n1)
+    while (i < left_size)
     {
-        arr[k] = L[i];
-        i++;
-        k++;
-
-        // Increment steps counter
-        (*steps)++;
+        array[k++] = left[i++];
+        steps++;
     }
 
-    // Copy the remaining elements of R[], if there are any
-    while (j < n2)
+    while (j < right_size)
     {
-        arr[k] = R[j];
-        j++;
-        k++;
-
-        // Increment steps counter
-        (*steps)++;
+        array[k++] = right[j++];
+        steps++;
     }
+
+    return steps;
 }
 
-/*
-    Merge Sort Function: Sorts an array of integers in ascending order.
-    arr[]: array to be sorted
-    l: starting index of array
-    r: ending index of array
-    steps: pointer to a variable that holds the number of steps taken
-*/
-void merge_sort(int arr[], int l, int r, int* steps)
+/* Función mergeSort: Implementa el algoritmo de ordenamiento merge sort y un contador para registrar los pasos que le toma ordenar la lista.
+ * params:
+    long array[]: Un array con los elementos desordenados.
+    long n: El tamaño del array
+ * returns:
+    unsigned long long: El número de pasos que le toma ordenar la lista
+ * */
+unsigned long long mergeSort(long array[], long n)
 {
-    if (l < r)
+    unsigned long long steps = 0;
+    if (n < 2)
     {
-        // Find the middle point
-        int m = l+(r-l)/2;
+        return steps;
+    }
 
-        // Sort first and second halves
-        merge_sort(arr, l, m, steps);
-        merge_sort(arr, m+1, r, steps);
+    long mid = n / 2;
+    long left[mid];
+    long right[n - mid];
 
-        // Merge the sorted halves
-        merge(arr, l, m, r, steps);
+    for (long i = 0; i < mid; i++)
+    {
+        left[i] = array[i];
+    }
+
+    for (long i = mid; i < n; i++)
+    {
+        right[i - mid] = array[i];
+    }
+
+    steps += mergeSort(left, mid);
+    steps += mergeSort(right, n - mid);
+    steps += merge(array, left, right, mid, n -mid);
+    return steps;
+}
+
+/* La función printArrayToFile nos ayuda a imprimir el contenido de un array a un archivo con extensión .txt.
+
+Esto nos servirá para graficar y verificar el resultado de la ordenación.
+params:
+long array[]: El array que contiene los elementos a imprimir
+long size: El tamaño del array
+FILE *file: El puntero que contiene la dirección del archivo en donde se va a imprimir el contenido
+returns:
+void
+*/
+void printArraytoFile(long array[], long size, FILE *file)
+{
+    long i;
+    fprintf(file, "[");
+    for (i = 0; i < size; i++)
+    {
+        if (i < size - 1)
+        {
+            fprintf(file, "%ld, ", array[i]);
+        }
+        else
+        {
+            fprintf(file, "%ld", array[i]);
+        }
+    }
+    fprintf(file, "]\n");
+}
+/* Función generateRandomNumbers. Nos sirve para llenar los arrays con números al azar.
+
+params:
+long array[]: El contenedor que llenaremos con números aleatorios
+long size: La cantidad de números que debe tener el array
+returns:
+void
+*/
+void generateRandomNumbers(long array[], long size)
+{
+    long i;
+    for (i = 0; i < size; i++)
+    {
+// Se llena el array con números aleatorios entre el 0 y 100000
+        array[i] = rand() % 100000;
     }
 }
+
 int main()
 {
-    // Seed the random number generator with the current time
-    srand(time(NULL));
-    // Initialize all values of steps to 0
-    int steps[101] = {0};
-    // Open file for writing
-    FILE *f = fopen("./merge_steps.txt", "w");
-    // Check if file was opened successfully
-    if (f == NULL)
+// Steps debe ser del tipo long long debido a la magnitud tan grande de los pasos
+    unsigned long long steps;
+// Nos servirá para medir el tiempo que tarda en ejecutar el algoritmo para cada una de las muestras
+    clock_t inicio, fin;
+// El tiempo que le tomó al algoritmo
+    double tiempo_total;
+    srand(time(0));
+    // Inicializamos los archivos txt en los cuales guardaremos la lista ordenada, así como el número de pasos y del tiempo.
+    FILE *merge_lists = fopen("./merge_list.txt", "w");
+    FILE *merge_steps = fopen("./merge_steps.txt", "w");
+    FILE *merge_time = fopen("./merge_time.txt", "w");
+
+// Generamos un array con los valores 800, 8000, 80000
+    long array_pruebas[] = {800, 8000, 80000};
+    long num_pruebas = sizeof(array_pruebas) / sizeof(array_pruebas[0]);
+
+// Este ciclo determina el número de veces que se ha de ejecutar el algoritmo.
+    for (long i = 0; i < num_pruebas; i++)
     {
-        printf("Error opening file.\n");
-        return 1;
+        long j = array_pruebas[i];
+        long array[j];
+
+        generateRandomNumbers(array, j);
+
+        // Iniciamos el conteo para registrar el tiempo que tarda el array en ordenar la lista
+        inicio = clock();
+        steps = mergeSort(array, j);
+        fin = clock();
+        tiempo_total = (double)(fin - inicio) / CLOCKS_PER_SEC;
+
+        printArraytoFile(array, j, merge_lists);
+        fprintf(merge_time, "%.5f\n", tiempo_total);
+        fprintf(merge_steps, "%lld\n", steps);
     }
-    FILE *f_lists = fopen("./merged_lists.txt", "w");
-    if (f_lists == NULL)
-    {
-        printf("Error opening file.\n");
-        return 1;
-    }
-    // Iterate over different list sizes
-    for (int n = 0; n <= 100; n++)
-    {
-        int arr[n];
-        for (int i = 0; i < n; i++)
-            // Generate random numbers between 0 and 100
-            arr[i] = rand() % 101;
-        // Get size of array
-        int arr_size = sizeof(arr)/sizeof(arr[0]);
-        // Initialize step counter to 0
-        int current_steps = 0;
-        // Sort array using merge sort
-        merge_sort(arr, 0, arr_size - 1, &current_steps);
-        // Store number of steps in array
-        steps[n] = current_steps;
-        fprintf(f_lists, "List %d: ", n);
-        for (int i = 0; i < n; i++)
-            fprintf(f_lists, "%d ", arr[i]);
-        fprintf(f_lists, "\n");
-    }
-    // Write steps to file
-    for (int i = 0; i <= 100; i++)
-        fprintf(f, "%d\n", steps[i]);
-    // Close file
-    fclose(f);
+
+// No olvidemos cerrar los archivos
+    fclose(merge_lists);
+    fclose(merge_steps);
+    fclose(merge_time);
     return 0;
-}
+    }
+

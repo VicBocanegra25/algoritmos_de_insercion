@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/vicbocanegra/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Quick_sort -B/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Quick_sort/cmake-build-debug
+  command = /home/vicbocanegra/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort -B/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

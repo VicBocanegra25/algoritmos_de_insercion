@@ -1,3 +1,5 @@
 # ninja log v5
-0	35	1679849324490088298	CMakeFiles/Selection_sort.dir/main.cpp.o	d494caa808f61116
 36	68	1679849324522088281	Selection_sort	c45b3ba0a6647d92
+0	35	1679849324490088298	CMakeFiles/Selection_sort.dir/main.cpp.o	d494caa808f61116
+0	37	1681532501499555934	CMakeFiles/Selection_sort.dir/main.cpp.o	37204db30936f64
+38	69	1681532501523555911	Selection_sort	c45b3ba0a6647d92

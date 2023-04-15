@@ -1,3 +1,3 @@
-/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Bubble_sort/cmake-build-debug/CMakeFiles/Bubble_sort.dir
-/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Bubble_sort/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Bubble_sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Bubble_sort/cmake-build-debug/CMakeFiles/Bubble_sort.dir
+/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Bubble_sort/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Bubble_sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir

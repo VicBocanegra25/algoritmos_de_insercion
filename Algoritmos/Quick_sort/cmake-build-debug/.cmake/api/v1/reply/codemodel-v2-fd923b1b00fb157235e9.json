@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Quick_sort/cmake-build-debug",
-		"source" : "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Quick_sort"
+		"build" : "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort/cmake-build-debug",
+		"source" : "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Quick_sort"
 	},
 	"version" : 
 	{

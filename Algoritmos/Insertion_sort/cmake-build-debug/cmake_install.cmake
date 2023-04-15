@@ -1,4 +1,4 @@
-# Install script for directory: /home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Insertion_sort
+# Install script for directory: /home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Insertion_sort
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vicbocanegra/CLionProjects/C_Programming/Algoritmos/Insertion_sort/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vicbocanegra/CLionProjects/C_Programming/algoritmos_actividad2/Algoritmos/Insertion_sort/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
